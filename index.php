@@ -12,6 +12,7 @@ try {
     $router = new \Bramus\Router\Router();
 
     // Define routes
+    $router->get('/', '\App\Controllers\StudentController@list');
     $router->get('/students', '\App\Controllers\StudentController@list');
     $router->get('/courses', '\App\Controllers\CourseController@list');
     $router->get('/courses/{course_code}', '\App\Controllers\CourseController@viewCourse');

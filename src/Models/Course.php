@@ -32,7 +32,7 @@ class Course extends BaseModel
 
     public function getEnrolees($course_code)
     {
-        $sql = "SELECT s.student_code AS student_code, CONCAT(s.first_name, ' ', s.last_name) AS full_name
+        $sql = "SELECT s.student_code AS student_code, CONCAT(s.first_name, ' ', s.last_name) AS full_name, s.email
                 FROM course_enrollments ce
                 LEFT JOIN students s ON s.student_code = ce.student_code
                 WHERE ce.course_code = :course_code";

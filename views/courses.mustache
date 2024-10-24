@@ -8,35 +8,47 @@
 </head>
 <body>
 
-    <h1>Courses</h1>
-    <table class="table table-striped table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Course Name</th>
-                <th>Course Code</th>
-                <th>Number of Enrollees</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h1 class="mb-4 text-center">Courses</h1>
+                <table class="table table-striped table-bordered table-hover table-responsive">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Course Name</th>
+                            <th>Course Code</th>
+                            <th>Number of Enrollees</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-            {{# items }}
-            <tr>
-                <td>{{ id }}</td>
-                <td>{{ course_name }}</td>
-                <td>{{ course_code }}</td>
-                <td>{{ student_count }}</td>
-                <td>
-                    <a href="/courses/{{course_code}}"><button class="btn btn-primary">View Course</button></a>
-                    <a href="/export-course/{{course_code}}"><button class="btn btn-primary">Export to PDF</button></a>
-                </td>
-            </tr>
-            {{/ items }}
-        </tbody>
-    </table>
+                        {{# items }}
+                        <tr>
+                            <td>{{ id }}</td>
+                            <td>{{ course_name }}</td>
+                            <td>{{ course_code }}</td>
+                            <td>{{ student_count }}</td>
+                            <td>
+                                <a href="/courses/{{course_code}}">
+                                    <button class="btn btn-primary btn-sm mb-2">View Course</button>
+                                </a>
+                                <a href="/export-course/{{course_code}}">
+                                    <button class="btn btn-secondary btn-sm">Export to PDF</button>
+                                </a>
+                            </td>
+                        </tr>
+                        {{/ items }}
+                    </tbody>
+                </table>
 
-    <a href="/enrollment-form">Enroll a Student</a>
+                <div class="text-center mt-4">
+                    <a href="/enrollment-form" class="btn btn-success">Enroll a Student</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

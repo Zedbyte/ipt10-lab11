@@ -82,7 +82,7 @@ class CourseController extends BaseController
         $pdf->SetFont('Arial', 'B', 12);
         $pdf->Cell(40, 10, 'ID', 1);
         $pdf->Cell(50, 10, 'Full Name', 1);
-        // $pdf->Cell(50, 10, 'Email', 1);
+        $pdf->Cell(100, 10, 'Email', 1);
         $pdf->Ln();
     
         // Loop through enrollees and add to PDF
@@ -90,7 +90,7 @@ class CourseController extends BaseController
         foreach ($enrollees as $enrollee) {
             $pdf->Cell(40, 10, $enrollee["student_code"], 1);
             $pdf->Cell(50, 10, $enrollee["full_name"], 1);
-            // $pdf->Cell(50, 10, $enrollee->email, 1);
+            $pdf->Cell(100, 10, $enrollee["email"], 1);
             $pdf->Ln();
         }
     
